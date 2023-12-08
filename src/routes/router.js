@@ -5,7 +5,12 @@ const authRouter = require('./auth.router');
 const { authHandler } = require('../middlewares/authhandler');
 const { logout } = require('../controllers/auth.controller');
 const postsRouter = require('./posts.router');
+const movies = require('../controllers/movie.controller');
+
 router.use('', authRouter);
+
+//public
+router.route('/movies').get(movies.allMovie);
 
 //secure
 router.use([authHandler]);
