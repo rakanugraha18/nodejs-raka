@@ -11,6 +11,7 @@ router.use('', authRouter);
 
 //public
 router.route('/movies').get(movies.allMovie);
+router.route('/movies/:id').get(movies.singleMovie);
 
 //secure
 router.use([authHandler]);
